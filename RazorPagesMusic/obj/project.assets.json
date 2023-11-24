@@ -11539,11 +11539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\RazorPagesMovie\\RazorPagesMovie.csproj",
+      "projectUniqueName": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\tarynengland.github.io\\csci340lab8\\csci340lab8\\RazorPagesMusic\\RazorPagesMovie.csproj",
       "projectName": "RazorPagesMovie",
-      "projectPath": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\RazorPagesMovie\\RazorPagesMovie.csproj",
+      "projectPath": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\tarynengland.github.io\\csci340lab8\\csci340lab8\\RazorPagesMusic\\RazorPagesMovie.csproj",
       "packagesPath": "C:\\Users\\taryn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\RazorPagesMovie\\obj\\",
+      "outputPath": "C:\\Users\\taryn\\Hendrix\\CSCI 340\\tarynengland.github.io\\csci340lab8\\csci340lab8\\RazorPagesMusic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\taryn\\AppData\\Roaming\\NuGet\\NuGet.Config"
