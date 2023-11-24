@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace RazorPagesMovie.Migrations
+namespace RazorPagesMusic.Migrations
 {
     /// <inheritdoc />
     public partial class New_DataAnnotations : Migration
@@ -12,7 +12,7 @@ namespace RazorPagesMovie.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "Title",
-                table: "Movie",
+                table: "Music",
                 type: "TEXT",
                 maxLength: 60,
                 nullable: false,
@@ -23,7 +23,7 @@ namespace RazorPagesMovie.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Genre",
-                table: "Movie",
+                table: "Music",
                 type: "TEXT",
                 maxLength: 30,
                 nullable: false,
@@ -38,7 +38,7 @@ namespace RazorPagesMovie.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "Title",
-                table: "Movie",
+                table: "Music",
                 type: "TEXT",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -47,7 +47,7 @@ namespace RazorPagesMovie.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Genre",
-                table: "Movie",
+                table: "Music",
                 type: "TEXT",
                 nullable: true,
                 oldClrType: typeof(string),

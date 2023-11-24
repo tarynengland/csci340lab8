@@ -1,5 +1,5 @@
 @page 
-@model RazorPagesMovie.Pages_Movies.IndexModel
+@model RazorPagesMusic.Pages_Music.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
 
 <form>
     <p>
-        <select asp-for="MovieGenre" asp-items="Model.Genres">
+        <select asp-for="MusicGenre" asp-items="Model.Genres">
             <option value="">All</option>
         </select>
         Title: <input type="text" asp-for="SearchString" />
@@ -25,25 +25,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Title)
+                @Html.DisplayNameFor(model => model.Music[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+                @Html.DisplayNameFor(model => model.Music[0].ReleaseDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Genre)
+                @Html.DisplayNameFor(model => model.Music[0].Genre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Rating)
+                @Html.DisplayNameFor(model => model.Music[0].Length)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Movie) {
+@foreach (var item in Model.Music) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
@@ -55,10 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Genre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
+                @Html.DisplayFor(modelItem => item.Length)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

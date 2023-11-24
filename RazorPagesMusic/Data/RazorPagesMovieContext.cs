@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Data
+namespace RazorPagesMusic.Data
 {
     public class RazorPagesMovieContext : DbContext
     {
@@ -14,6 +14,6 @@ namespace RazorPagesMovie.Data
         {
         }
 
-        public DbSet<RazorPagesMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<RazorPagesMusic.Models.Music> Music { get; set; } = default!;
     }
 }

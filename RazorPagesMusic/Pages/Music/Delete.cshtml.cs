@@ -5,55 +5,55 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Pages_Movies
+namespace RazorPagesMusic.Pages_Music
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly RazorPagesMusic.Data.RazorPagesMovieContext _context;
 
-        public DeleteModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public DeleteModel(RazorPagesMusic.Data.RazorPagesMovieContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-      public Movie Movie { get; set; } = default!;
+      public Music Music { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Movie == null)
+            if (id == null || _context.Music == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
+            var music = await _context.Music.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (movie == null)
+            if (music == null)
             {
                 return NotFound();
             }
             else 
             {
-                Movie = movie;
+                Music = music;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Movie == null)
+            if (id == null || _context.Music == null)
             {
                 return NotFound();
             }
-            var movie = await _context.Movie.FindAsync(id);
+            var music = await _context.Music.FindAsync(id);
 
-            if (movie != null)
+            if (music != null)
             {
-                Movie = movie;
-                _context.Movie.Remove(Movie);
+                Music = music;
+                _context.Music.Remove(Music);
                 await _context.SaveChangesAsync();
             }
 

@@ -6,36 +6,36 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Pages_Movies
+namespace RazorPagesMusic.Pages_Music
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly RazorPagesMusic.Data.RazorPagesMovieContext _context;
 
-        public EditModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public EditModel(RazorPagesMusic.Data.RazorPagesMovieContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Movie Movie { get; set; } = default!;
+        public Music Music { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Movie == null)
+            if (id == null || _context.Music == null)
             {
                 return NotFound();
             }
 
-            var movie =  await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            var music =  await _context.Music.FirstOrDefaultAsync(m => m.Id == id);
+            if (music == null)
             {
                 return NotFound();
             }
-            Movie = movie;
+            Music = music;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace RazorPagesMovie.Pages_Movies
                 return Page();
             }
 
-            _context.Attach(Movie).State = EntityState.Modified;
+            _context.Attach(Music).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace RazorPagesMovie.Pages_Movies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MovieExists(Movie.Id))
+                if (!MusicExists(Music.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace RazorPagesMovie.Pages_Movies
             return RedirectToPage("./Index");
         }
 
-        private bool MovieExists(int id)
+        private bool MusicExists(int id)
         {
-          return (_context.Movie?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Music?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

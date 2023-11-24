@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace RazorPagesMovie.Migrations
+namespace RazorPagesMusic.Migrations
 {
     /// <inheritdoc />
     public partial class Rating : Migration
@@ -11,8 +11,8 @@ namespace RazorPagesMovie.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<decimal>(
-                name: "Price",
-                table: "Movie",
+                name: "Length",
+                table: "Music",
                 type: "decimal(18, 2)",
                 nullable: false,
                 oldClrType: typeof(decimal),
@@ -20,7 +20,7 @@ namespace RazorPagesMovie.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "Rating",
-                table: "Movie",
+                table: "Music",
                 type: "TEXT",
                 nullable: false,
                 defaultValue: "");
@@ -31,11 +31,11 @@ namespace RazorPagesMovie.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Rating",
-                table: "Movie");
+                table: "Music");
 
             migrationBuilder.AlterColumn<decimal>(
-                name: "Price",
-                table: "Movie",
+                name: "Length",
+                table: "Music",
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(decimal),

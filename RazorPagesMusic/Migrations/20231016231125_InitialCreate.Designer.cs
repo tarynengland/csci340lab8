@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RazorPagesMovie.Data;
+using RazorPagesMusic.Data;
 
 #nullable disable
 
-namespace RazorPagesMovie.Migrations
+namespace RazorPagesMusic.Migrations
 {
     [DbContext(typeof(RazorPagesMovieContext))]
     [Migration("20231016231125_InitialCreate")]
@@ -20,7 +20,7 @@ namespace RazorPagesMovie.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.12");
 
-            modelBuilder.Entity("RazorPagesMovie.Models.Movie", b =>
+            modelBuilder.Entity("RazorPagesMusic.Models.Music", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,7 +29,7 @@ namespace RazorPagesMovie.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("Length")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReleaseDate")
@@ -40,7 +40,7 @@ namespace RazorPagesMovie.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Music");
                 });
 #pragma warning restore 612, 618
         }

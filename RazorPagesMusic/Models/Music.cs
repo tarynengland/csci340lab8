@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RazorPagesMovie.Models;
+namespace RazorPagesMusic.Models;
 
-public class Movie
+public class Music
 {
     public int Id { get; set; }
 
@@ -18,15 +18,11 @@ public class Movie
     [Range(1, 100)]
     [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(18, 2)")]
-    public decimal Price { get; set; }
+    public decimal Length { get; set; }
 
     [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
     [Required]
     [StringLength(30)]
     public string Genre { get; set; } = string.Empty;
 
-    [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
-    [StringLength(5)]
-    [Required]
-    public string Rating { get; set; } = string.Empty;
 }

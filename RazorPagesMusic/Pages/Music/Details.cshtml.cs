@@ -5,37 +5,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Pages_Movies
+namespace RazorPagesMusic.Pages_Music
 {
     public class DetailsModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly RazorPagesMusic.Data.RazorPagesMovieContext _context;
 
-        public DetailsModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public DetailsModel(RazorPagesMusic.Data.RazorPagesMovieContext context)
         {
             _context = context;
         }
 
-      public Movie Movie { get; set; } = default!; 
+      public Music Music { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Movie == null)
+            if (id == null || _context.Music == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            var music = await _context.Music.FirstOrDefaultAsync(m => m.Id == id);
+            if (music == null)
             {
                 return NotFound();
             }
             else 
             {
-                Movie = movie;
+                Music = music;
             }
             return Page();
         }

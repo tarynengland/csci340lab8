@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Pages_Movies
+namespace RazorPagesMusic.Pages_Music
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly RazorPagesMusic.Data.RazorPagesMovieContext _context;
 
-        public CreateModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public CreateModel(RazorPagesMusic.Data.RazorPagesMovieContext context)
         {
             _context = context;
         }
@@ -25,18 +25,18 @@ namespace RazorPagesMovie.Pages_Movies
         }
 
         [BindProperty]
-        public Movie Movie { get; set; } = default!;
+        public Music Music { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Movie == null || Movie == null)
+          if (!ModelState.IsValid || _context.Music == null || Music == null)
             {
                 return Page();
             }
 
-            _context.Movie.Add(Movie);
+            _context.Music.Add(Music);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

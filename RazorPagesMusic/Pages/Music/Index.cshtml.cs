@@ -6,21 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
 
-namespace RazorPagesMovie.Pages_Movies
+namespace RazorPagesMusic.Pages_Music
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly RazorPagesMusic.Data.RazorPagesMovieContext _context;
 
-        public IndexModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public IndexModel(RazorPagesMusic.Data.RazorPagesMovieContext context)
         {
             _context = context;
         }
 
-        public IList<Movie> Movie { get;set; } = default!;
+        public IList<Music> Music { get;set; } = default!;
 
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
@@ -28,29 +28,29 @@ namespace RazorPagesMovie.Pages_Movies
         public SelectList? Genres { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public string? MovieGenre { get; set; }
+        public string? MusicGenre { get; set; }
 
         public async Task OnGetAsync()
         {
             // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Movie
+            IQueryable<string> genreQuery = from m in _context.Music
                                             orderby m.Genre
                                             select m.Genre;
 
-            var movies = from m in _context.Movie
+            var music = from m in _context.Music
                         select m;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                movies = movies.Where(s => s.Title.Contains(SearchString));
+                music = music.Where(s => s.Title.Contains(SearchString));
             }
 
-            if (!string.IsNullOrEmpty(MovieGenre))
+            if (!string.IsNullOrEmpty(MusicGenre))
             {
-                movies = movies.Where(x => x.Genre == MovieGenre);
+                music = music.Where(x => x.Genre == MusicGenre);
             }
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            Movie = await movies.ToListAsync();
+            Music = await music.ToListAsync();
         }
     }
 }
