@@ -24,5 +24,5 @@ public class Music
     [Required]
     [StringLength(30)]
     public string Genre { get; set; } = string.Empty;
-
+    public int Rating { get; set; } 
 }

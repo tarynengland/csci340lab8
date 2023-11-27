@@ -1,4 +1,4 @@
-@page "{id:int?}"
+@page
 @model RazorPagesMusic.Pages_Music.DeleteModel
 
 @{
@@ -25,16 +25,22 @@
             @Html.DisplayFor(model => model.Music.ReleaseDate)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Music.Length)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Music.Length)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Music.Genre)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Music.Genre)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Music.Length)
+            @Html.DisplayNameFor(model => model.Music.Rating)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Music.Length)
+            @Html.DisplayFor(model => model.Music.Rating)
         </dd>
     </dl>
     

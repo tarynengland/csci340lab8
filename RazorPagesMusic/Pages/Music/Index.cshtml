@@ -1,4 +1,4 @@
-@page 
+@page
 @model RazorPagesMusic.Pages_Music.IndexModel
 
 @{
@@ -10,17 +10,6 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-
-<form>
-    <p>
-        <select asp-for="MusicGenre" asp-items="Model.Genres">
-            <option value="">All</option>
-        </select>
-        Title: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-
 <table class="table">
     <thead>
         <tr>
@@ -31,10 +20,13 @@
                 @Html.DisplayNameFor(model => model.Music[0].ReleaseDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Music[0].Length)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Music[0].Genre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Music[0].Length)
+                @Html.DisplayNameFor(model => model.Music[0].Rating)
             </th>
             <th></th>
         </tr>
@@ -49,10 +41,13 @@
                 @Html.DisplayFor(modelItem => item.ReleaseDate)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Genre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Length)
+                @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

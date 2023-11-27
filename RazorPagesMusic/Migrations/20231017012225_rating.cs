@@ -22,7 +22,7 @@ namespace RazorPagesMusic.Migrations
                 name: "Rating",
                 table: "Music",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
         }
 

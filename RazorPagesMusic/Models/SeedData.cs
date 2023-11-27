@@ -28,7 +28,8 @@ public static class SeedData
                     Title = "Fire",
                     ReleaseDate = DateTime.Parse("2023-5-5"),
                     Genre = "Rock",
-                    Length = 3.21M
+                    Length = 3.21M,
+                    Rating = 5
                 },
 
                 new Music
