@@ -15,10 +15,8 @@ public class Music
     [DataType(DataType.Date)]
     public DateTime ReleaseDate { get; set; }
 
-    [Range(1, 100)]
-    [DataType(DataType.Currency)]
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal Length { get; set; }
+
+    public string Length { get; set; } = string.Empty;
 
     [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
     [Required]

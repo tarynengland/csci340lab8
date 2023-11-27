@@ -28,7 +28,7 @@ public static class SeedData
                     Title = "Fire",
                     ReleaseDate = DateTime.Parse("2023-5-5"),
                     Genre = "Rock",
-                    Length = 3.21M,
+                    Length = "3:21",
                     Rating = 5
                 },
 
@@ -37,7 +37,7 @@ public static class SeedData
                     Title = "I Can See You",
                     ReleaseDate = DateTime.Parse("2023-7-7"),
                     Genre = "Pop",
-                    Length = 5.07M
+                    Length = "5:07"
                 }
             );
             context.SaveChanges();
